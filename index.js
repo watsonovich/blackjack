@@ -5,13 +5,20 @@ let firstCard = Math.floor(Math.random() * (max - min + 1)) + min;
 let secondCard = Math.floor(Math.random() * (max - min + 1)) + min;
 
 let sum = firstCard + secondCard;
+let hasBlackJack = false;
+let isAlive = true;
+let message = "";
 
 console.log(firstCard, secondCard, sum);
 
 if (sum < 21) {
-  console.log("Do you want to draw a new card?");
+  message = "Do you want to draw a new card? 🙂";
 } else if (sum === 21) {
-  console.log("Congratulations!  You've got Blackjack!");
+  message = "Congratulations!  You've got Blackjack! 🥳";
+  hasBlackJack = true;
 } else {
-  console.log("Your out of the game");
+  message = "Your out of the game 😭";
+  isAlive = false;
 }
+
+console.log(message);
